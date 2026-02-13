@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyFetch Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="weather-card" id="weather-card">
+            <div class="search-container">
+                <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+                <button id="search-btn">Search</button>
+            </div>
+            <div id="error-message" class="error-message hidden"></div>
+            <div id="loading-indicator" class="loading-indicator hidden">Loading...</div>
+            
+            <div class="weather-content" id="weather-content">
+                <div class="header">
+                    <h1 id="city-name">--</h1>
+                    <p id="current-date"></p>
+                </div>
+                <div class="weather-info">
+                    <div class="main-stats">
+                        <img id="weather-icon" src="" alt="Weather Icon" class="weather-icon hidden">
+                        <span id="temperature" class="temp">--°C</span>
+                    </div>
+                    <p id="weather-description" class="description">Enter a city to get weather</p>
+                </div>
+                
+                <!-- Forecast Section -->
+                <div class="forecast-container hidden" id="forecast-container">
+                    <h2>5-Day Forecast</h2>
+                    <div class="forecast-grid" id="forecast-grid">
+                        <!-- Forecast cards will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
